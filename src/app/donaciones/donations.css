@@ -1,0 +1,85 @@
+.donations-page {
+    background-color: var(--base-100);
+    min-height: 100vh;
+}
+
+.donations-page h3 {
+    font-size: 4rem;
+}
+
+.donations-page .project-header {
+    width: 100vw;
+    height: 60svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+    padding-top: 4rem;
+    text-align: center;
+}
+
+.donations-page .project-header p {
+    margin-bottom: 2rem;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.donation-content {
+    width: 55%;
+    margin: 0 auto;
+    padding-bottom: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 3rem;
+}
+
+.paypal-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #003087;
+    /* PayPal Blue */
+    color: white;
+    padding: 1rem 3rem;
+    border-radius: 2rem;
+    font-family: inherit;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 48, 135, 0.3);
+}
+
+.paypal-btn:hover {
+    background-color: #001c64;
+    transform: translateY(-5px);
+}
+
+.paypal-logo {
+    height: 1.5rem;
+    margin-left: 0.75rem;
+    filter: brightness(0) invert(1);
+}
+
+@media (max-width: 1000px) {
+    .donations-page h3 {
+        font-size: 2.5rem;
+    }
+
+    .donation-content {
+        width: 90%;
+    }
+
+    .donations-page .project-header {
+        height: 50svh;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+}
