@@ -83,7 +83,7 @@ const Preloader = () => {
 
         tl.to(".progress-bar", {
           scaleX: 1,
-          duration: 4,
+          duration: 2,
           ease: "power3.inOut",
         })
           .set(".progress-bar", { transformOrigin: "right" })
