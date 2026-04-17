@@ -1,0 +1,99 @@
+.departamentos-page {
+  width: 100vw;
+  min-height: 100vh;
+  background: var(--base-400);
+  color: var(--base-100);
+}
+
+.departamentos-header {
+  padding-top: 150px;
+  padding-bottom: 50px;
+}
+
+.departamentos-header-row {
+  width: 100%;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.departamentos-header-row h1 {
+  font-size: 8rem;
+  text-transform: uppercase;
+  color: var(--base-100);
+  line-height: 0.9;
+}
+
+.departamentos-grid-section {
+  padding: 50px 0 100px;
+}
+
+.departamentos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.departamento-card {
+  background: var(--base-500);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.departamento-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.departamento-card-img-wrapper {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #1a1614;
+}
+
+.departamento-card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.departamento-card:hover .departamento-card-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.departamento-card-info {
+  padding: 1.5rem;
+  background: var(--base-100);
+  color: var(--base-400);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.departamento-card-info h3 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent-1);
+}
+
+.departamento-card-info p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--base-300);
+}
+
+@media (max-width: 1000px) {
+  .departamentos-header-row h1 {
+    font-size: 4rem;
+  }
+  
+  .departamentos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}

@@ -33,6 +33,7 @@ const Menu = ({ pageRef }) => {
     { label: "Home", route: "/" },
     { label: "Recursos", route: "/recursos" },
     { label: "Iglesia", route: "/Iglesia" },
+    { label: "Departamentos", route: "/departamentos" },
     { label: "Est. Biblicos", route: "https://www.apictureofgod.com" },
     { label: "Stories", route: "/stories" },
     { label: "Contact", route: "/contact" },
@@ -365,7 +366,7 @@ const Menu = ({ pageRef }) => {
               menuColsRef.current[1] = el;
             }}
           >
-            {renderMenuItems(menuItems.slice(3, 6), 3)}
+            {renderMenuItems(menuItems.slice(3, 7), 3)}
           </div>
         </div>
 

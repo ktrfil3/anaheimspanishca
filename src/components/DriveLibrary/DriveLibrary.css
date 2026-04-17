@@ -1,0 +1,109 @@
+.drive-library-container {
+  width: 100%;
+  padding: 4rem 0;
+  border-top: 1px solid var(--base-300);
+  margin-top: 5rem;
+}
+
+.drive-library-empty {
+  padding: 4rem 0;
+  text-align: center;
+  border-top: 1px solid var(--base-300);
+  margin-top: 5rem;
+  color: var(--base-300);
+}
+
+.drive-library-header {
+  margin-bottom: 3rem;
+}
+
+.drive-library-header h2 {
+  font-size: 4rem;
+  color: var(--accent-1);
+}
+
+.drive-library-header p {
+  color: var(--base-300);
+  font-size: 1.25rem;
+}
+
+.drive-library-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.drive-file-card {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  background: var(--base-400);
+  border: 1px solid var(--base-300);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.drive-file-card:hover {
+  background: var(--base-500);
+  border-color: var(--base-100);
+  transform: translateY(-5px);
+}
+
+.drive-file-icon {
+  margin-right: 1.5rem;
+}
+
+.file-icon-shape {
+  width: 40px;
+  height: 50px;
+  background: var(--base-200);
+  border-radius: 4px 12px 4px 4px;
+  position: relative;
+}
+
+.file-icon-shape::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background: var(--base-300);
+  border-bottom-left-radius: 4px;
+}
+
+.file-icon-shape.pdf {
+  background: #db4437;
+}
+
+.file-icon-shape.document {
+  background: #4285f4;
+}
+
+.file-icon-shape.spreadsheet {
+  background: #0f9d58;
+}
+
+.file-icon-shape.presentation {
+  background: #f4b400;
+}
+
+.drive-file-info h4 {
+  font-size: 1.25rem;
+  font-family: "PP Neue Montreal", sans-serif;
+  color: var(--base-100);
+  margin-bottom: 0.25rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.drive-file-info p {
+  color: var(--base-200);
+}
+
+@media (max-width: 1000px) {
+  .drive-library-header h2 {
+    font-size: 2.5rem;
+  }
+}

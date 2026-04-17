@@ -4,28 +4,15 @@ import React, { useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { LuVolumeX, LuVolume } from "react-icons/lu";
+import { FaYoutube } from "react-icons/fa";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const Showreel = () => {
   const showreelSecRef = useRef(null);
-  const audioRef = useRef(null);
   const [currentFrame, setCurrentFrame] = useState(1);
-  const [isMuted, setIsMuted] = useState(true);
   const totalFrames = 7;
   const frameInterval = 500;
-
-  const toggleMute = () => {
-    if (audioRef.current) {
-      audioRef.current.muted = !audioRef.current.muted;
-      setIsMuted(!isMuted);
-
-      if (!audioRef.current.muted && audioRef.current.paused) {
-        audioRef.current.play();
-      }
-    }
-  };
 
   useGSAP(
     () => {
@@ -40,10 +27,6 @@ const Showreel = () => {
           frameTimeline.add(() => {
             setCurrentFrame(i);
           }, (i - 1) * (frameInterval / 1000));
-        }
-
-        if (audioRef.current) {
-          audioRef.current.play().catch((error) => { });
         }
 
         const scrollTrigger = ScrollTrigger.create({
@@ -82,9 +65,7 @@ const Showreel = () => {
 
         return () => {
           frameTimeline.kill();
-
           scrollTriggerInstances.forEach((trigger) => trigger.kill());
-
           window.removeEventListener("orientationchange", refreshHandler);
           window.removeEventListener("resize", refreshHandler);
           window.removeEventListener("load", onLoad);
@@ -128,22 +109,33 @@ const Showreel = () => {
           src={`/showreel/showreel-frame-${currentFrame}.jpg`}
           alt="Showreel frame"
         />
+        <div className="showreel-overlay-bg"></div>
       </div>
 
-      <div className="volume-icon" onClick={toggleMute}>
-        {isMuted ? (
-          <LuVolumeX color="#171412" size={25} />
-        ) : (
-          <LuVolume color="#171412" size={25} />
-        )}
+      <div className="live-stream-overlay">
+        <a 
+          href="https://www.youtube.com/@iglesiaadventistahispanade6056" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="live-btn"
+        >
+          <div className="live-btn-icon">
+            <FaYoutube size={35} color="#fff" />
+          </div>
+          <p className="cap">Transmisión en vivo</p>
+        </a>
+        
+        <div className="live-schedule">
+          <p className="lg schedule-title">Acompáñanos en nuestros horarios:</p>
+          <div className="schedule-days">
+            <span className="sm">Miércoles (Noche)</span>
+            <span className="dot">•</span>
+            <span className="sm">Viernes (Noche)</span>
+            <span className="dot">•</span>
+            <span className="sm">Sábados</span>
+          </div>
+        </div>
       </div>
-
-      <audio
-        ref={audioRef}
-        src="https://stream1.faithfm.com.au/FaithFM.mp3"
-        loop
-        muted={isMuted}
-      />
     </section>
   );
 };
