@@ -18,7 +18,7 @@ const CTACard = () => {
           <div className="cta-col">
             <Copy animateOnScroll={true}>
               <p className="lg">
-                conecta con nosotros! aprende mas sobre nosotros, nuestras creeencias y valores. como Dios dirige nuestras vidas.
+                Conecta con nosotros! aprende mas sobre nosotros, nuestras creeencias y valores. como Dios dirige nuestras vidas.
               </p>
             </Copy>
 
@@ -30,42 +30,6 @@ const CTACard = () => {
             >
               Ven a conocernos
             </Button>
-          </div>
-        </div>
-
-        <div className="cta-card">
-          <div className="cta-card-copy">
-            <div className="cta-card-col">
-              <Copy animateOnScroll={true}>
-                <h3>Secret Department</h3>
-              </Copy>
-            </div>
-
-            <div className="cta-card-col">
-              <Copy animateOnScroll={true}>
-                <p>
-                  We like to think we build order out of chaos, but it’s usually
-                  the other way around. Every project starts as a mess of
-                  sketches and motion tests.
-                </p>
-
-                <p>
-                  If something feels too polished, we probably broke it on
-                  purpose and rebuilt it slightly wrong, just enough to feel
-                  human.
-                </p>
-              </Copy>
-
-              <Button
-                animateOnScroll={true}
-                delay={0.25}
-                variant="light"
-                icon={MdArticle}
-                href="/studio"
-              >
-                Read the theory
-              </Button>
-            </div>
           </div>
         </div>
       </div>

@@ -22,10 +22,45 @@
   padding-bottom: 2rem;
 }
 
+.departamento-title-container {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.back-button {
+  background: transparent;
+  border: 1.5px solid var(--base-200);
+  color: var(--base-100);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.back-button:hover {
+  background: var(--base-100);
+  color: var(--base-500);
+  border-color: var(--base-100);
+  transform: translateX(-6px);
+}
+
+.back-button svg {
+  width: 24px;
+  height: 24px;
+}
+
 .departamento-hero-row h1 {
   font-size: 6rem;
   color: var(--base-100);
+  line-height: 1;
 }
+
 
 .departamento-leader-section {
   padding: 4rem 0;
@@ -81,9 +116,25 @@
 
 @media (max-width: 1000px) {
   .departamento-hero-row h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
   
+  .departamento-title-container {
+    gap: 1.5rem;
+  }
+
+  .back-button {
+    width: 48px;
+    height: 48px;
+    border-width: 1px;
+  }
+
+  .back-button svg {
+    width: 20px;
+    height: 20px;
+  }
+
+
   .leader-info-wrapper {
     flex-direction: column;
     text-align: center;

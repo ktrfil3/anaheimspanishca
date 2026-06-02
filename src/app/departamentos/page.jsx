@@ -52,7 +52,7 @@ const DepartamentosPage = () => {
                 }}
               >
                 <div className="departamento-card-img-wrapper">
-                  <img src={dept.leaderPhoto} alt={dept.leaderName} />
+                  <img src={dept.coverPhoto} alt={dept.name} />
                 </div>
                 <div className="departamento-card-info">
                   <h3>{dept.name}</h3>

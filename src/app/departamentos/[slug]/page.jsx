@@ -6,6 +6,7 @@ import DriveLibrary from "@/components/DriveLibrary/DriveLibrary";
 import React, { useEffect } from "react";
 import { useParams } from "next/navigation";
 import { departamentos } from "@/data/departamentos";
+import { useViewTransition } from "@/hooks/useViewTransition";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -14,6 +15,7 @@ gsap.registerPlugin(ScrollTrigger);
 const DepartamentoPage = () => {
   const params = useParams();
   const slug = params.slug;
+  const { navigateWithTransition } = useViewTransition();
 
   const data = departamentos.find((d) => d.slug === slug);
 
@@ -46,9 +48,31 @@ const DepartamentoPage = () => {
       <section className="departamento-hero">
         <div className="container">
           <div className="departamento-hero-row">
-            <Copy delay={0.8}>
-              <h1>{data.name}</h1>
-            </Copy>
+            <div className="departamento-title-container">
+              <button 
+                className="back-button"
+                onClick={() => navigateWithTransition("/departamentos")}
+                aria-label="Volver a departamentos"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+              </button>
+              <Copy delay={0.8}>
+                <h1>{data.name}</h1>
+              </Copy>
+            </div>
           </div>
         </div>
       </section>

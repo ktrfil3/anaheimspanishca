@@ -92,7 +92,7 @@
   .departamentos-header-row h1 {
     font-size: 4rem;
   }
-  
+
   .departamentos-grid {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }

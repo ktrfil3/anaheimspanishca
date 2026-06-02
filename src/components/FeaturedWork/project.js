@@ -21,10 +21,10 @@ export const projects = [
     slug: "estructura"
   },
   {
-    name: "Adra",
+    name: "Servicios",
     description: "Fragments of memory cast in mineral form.",
     img: "/featured-work/work-4.jpg",
-    route: "/identidad/adra",
-    slug: "adra"
+    route: "/identidad/servicios",
+    slug: "servicios"
   }
 ];

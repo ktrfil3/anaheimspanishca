@@ -46,7 +46,7 @@ const Page = () => {
           <div className="hero-content-main">
             <div className="hero-header">
               <Copy animateOnScroll={false} delay={isInitialLoad ? 5.75 : 0.75}>
-                <h1>We are ready to pray for you</h1>
+                <h1>Estamos listos para orar por ti</h1>
               </Copy>
             </div>
 
@@ -60,12 +60,17 @@ const Page = () => {
             <div className="hero-footer">
               <Copy animateOnScroll={false} delay={isInitialLoad ? 6.05 : 1.15}>
                 <p className="lg">
-                  Are you facing challenges that seem too big to handle? Jesus walks with you through every dark valley. His hand is reaching out to you right now. Share your burden with us, and together we’ll bring it before the King of kings. Experience the life-changing power of prayer today.
+                  ¿Te enfrentas a retos que parecen demasiado grandes como para
+                  superarlos? Jesús te acompaña por cada valle oscuro.
+                  Su mano se extiende hacia ti en este mismo instante.
+                  Comparte tu carga con nosotros y, juntos, la presentaremos
+                  ante el Rey de reyes. Experimenta hoy mismo
+                  el poder transformador de la oración.
                 </p>
               </Copy>
 
               <Button delay={isInitialLoad ? 6.35 : 1.55} href="/contact">
-                Let's pray
+                Oremos!
               </Button>
             </div>
           </div>
@@ -111,7 +116,9 @@ const Page = () => {
             <div className="featured-work-header-copy">
               <Copy animateOnScroll={true} delay={0.25}>
                 <p className="lg">
-                  We are a movement of believers united by our love for Jesus and our commitment to His Word.
+                  Somos un movimiento de creyentes unidos por nuestro
+                  amor a Jesús y nuestro compromiso con su
+                  Palabra.
                 </p>
               </Copy>
             </div>

@@ -5,7 +5,7 @@ export const teamMembers = [
     img: "/team-cards/team-member-1.jpg",
     alt: "Lina Duarte",
     description:
-      "Diaconiza",
+      "Dorcas",
   },
   {
     id: "card-2",
@@ -13,7 +13,7 @@ export const teamMembers = [
     img: "/team-cards/team-member-2.jpg",
     alt: "Kenji Mori",
     description:
-      "Diacono",
+      "Ansiano",
   },
   {
     id: "card-3",
@@ -21,7 +21,7 @@ export const teamMembers = [
     img: "/team-cards/team-member-3.jpg",
     alt: "Amara Singh",
     description:
-      "Diaconiza",
+      "Tesoreria",
   },
   {
     id: "card-4",
@@ -29,14 +29,14 @@ export const teamMembers = [
     img: "/team-cards/team-member-4.jpg",
     alt: "Felix Turner",
     description:
-      "Pastor",
+      "EBV",
   },
   {
     id: "card-5",
     name: "Isolde Rey",
-    img: "/team-cards/team-member-4.jpg",
+    img: "/team-cards/team-member-5.jpg",
     alt: "Isolde Rey",
     description:
-      "Anciano",
+      "Pastor",
   },
 ];

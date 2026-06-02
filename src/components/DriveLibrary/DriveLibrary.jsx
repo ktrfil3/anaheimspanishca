@@ -28,10 +28,10 @@ const DriveLibrary = ({ materials }) => {
   return (
     <div className="drive-library-container">
       <div className="drive-library-header">
-        <h2>Materiales Escolar</h2>
+        <h2>Materiales Descargables</h2>
         <p>Recursos conectados con Google Drive</p>
       </div>
-      
+
       <div className="drive-library-grid">
         {materials.map((item) => (
           <a key={item.id} href={item.link} target="_blank" rel="noopener noreferrer" className="drive-file-card">
