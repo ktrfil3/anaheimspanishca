@@ -76,7 +76,6 @@
   width: 90px;
   height: 90px;
   border-radius: 50%;
-  overflow: hidden;
   border: 3px solid var(--base-300);
   background: var(--base-500);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -97,17 +96,19 @@
 }
 
 .org-node__avatar img {
-  width: 100%;
-  height: 100%;
+  width: 100% !important;
+  height: 100% !important;
   object-fit: cover;
   pointer-events: none;
+  border-radius: 50%;
 }
 
 /* --- Toggle badge --- */
 .org-node__toggle {
   position: absolute;
-  bottom: 2px;
-  right: 2px;
+  bottom: -11px;
+  left: 50%;
+  transform: translate(-50%, 0);
   width: 22px;
   height: 22px;
   background: var(--accent-2);
@@ -116,10 +117,11 @@
   align-items: center;
   justify-content: center;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s;
+  z-index: 2;
 }
 
 .org-node__toggle--open {
-  transform: rotate(180deg);
+  transform: translate(-50%, 0) rotate(180deg);
   background: var(--accent-1);
 }
 
@@ -241,5 +243,127 @@
   .org-node__title {
     font-size: 0.6rem;
     max-width: 90px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Hide horizontal scrolling for org-chart-wrapper and ensure it fits */
+  .org-chart-wrapper {
+    justify-content: flex-start;
+    overflow-x: hidden;
+    padding: 0 0.5rem 2rem;
+  }
+
+  /* Hide default lines */
+  .org-children__line-v {
+    display: none;
+  }
+
+  /* Stack children container vertically and add indentation */
+  .org-children {
+    padding-left: 72px; /* 4.5rem indent */
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+
+  /* Stack sibling branches vertically */
+  .org-children__row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .org-children__branch {
+    align-items: flex-start;
+    padding: 0;
+    width: 100%;
+    position: relative;
+  }
+
+  /* Left-align container and nodes */
+  .org-node-container {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  /* Turn card into a compact horizontal pill row */
+  .org-node {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    background: var(--base-500);
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    border-radius: 50px;
+    border: 1px solid var(--base-300);
+    width: fit-content;
+    max-width: 100%;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .org-node:hover {
+    transform: translateX(4px);
+    border-color: var(--accent-2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Left-align avatar and text inside the card */
+  .org-node__info {
+    align-items: flex-start;
+    gap: 0.1rem;
+  }
+
+  .org-node__name {
+    text-align: left;
+    max-width: 150px;
+    font-size: 0.8rem;
+  }
+
+  .org-node__title {
+    text-align: left;
+    max-width: 160px;
+    font-size: 0.65rem;
+  }
+
+  /* Draw vertical connecting line */
+  .org-children::before {
+    content: '';
+    position: absolute;
+    top: -24px;
+    bottom: 35px; /* Stop at the center of the last child avatar */
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent-2), var(--base-300));
+    opacity: 0.4;
+  }
+
+  /* Specific vertical line positions per level */
+  .level-0 > .org-children::before {
+    left: 55.5px; /* Aligns with root avatar center */
+  }
+  .org-node-container:not(.level-0) > .org-children::before {
+    left: 43px; /* Aligns with level-1/2 avatar center */
+  }
+
+  /* Draw horizontal connecting lines */
+  .org-children__line-h {
+    position: absolute;
+    top: 35px;
+    height: 2px;
+    background: var(--accent-2);
+    opacity: 0.4;
+    margin-bottom: 0;
+  }
+
+  /* Specific horizontal line positions/widths per level */
+  .level-0 > .org-children > .org-children__row > .org-children__branch > .org-children__line-h {
+    left: -16.5px;
+    width: 24.5px;
+  }
+  .org-node-container:not(.level-0) > .org-children > .org-children__row > .org-children__branch > .org-children__line-h {
+    left: -29px;
+    width: 37px;
   }
 }
