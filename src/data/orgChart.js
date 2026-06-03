@@ -26,7 +26,7 @@ export const orgChart = {
           id: "dorcas",
           name: "Elsy Barraona",
           title: "Ministerio de Dorcas",
-          photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop",
+          photo: "/departamet/dorcas.jpg",
         },
       ],
     },
