@@ -1,24 +1,24 @@
 export const articles = {
     "actividades": {
         title: "Actividades",
-        subtitle: "A reflective figure sculpted in synthetic light.",
-        content: "La estructura de nuestra iglesia no es solo organización, es un cuerpo vivo. Cada departamento, cada ministerio, trabaja en armonía para cumplir una misión mayor. Como una figura esculpida en luz, nuestra estructura busca reflejar el orden divino y la belleza de trabajar unidos por un propósito eterno.",
+        subtitle: "Una comunidad activa al servicio de Dios y del prójimo.",
+        content: "En la Iglesia Adventista de Anaheim Spanish, la fe cobra vida a través de nuestras actividades. Desde el estudio profundo de las Escrituras hasta programas interactivos para niños y jóvenes, cada reunión está pensada para fortalecer la comunión con Dios, estrechar los lazos familiares y servir a la comunidad.",
         details: {
-            "Concept": "Unity in Design",
-            "Cycle": "Ongoing",
-            "Form": "Organizational Structure",
-            "Medium": "Community & Service"
+            "Participación": "Abierta a toda la comunidad",
+            "Categorías": "Adultos, Familias, Jóvenes y Niños",
+            "Frecuencia": "Semanal, mensual y anual",
+            "Ubicación": "Anaheim, California"
         }
     },
     "estructura": {
         title: "Estructura",
-        subtitle: "Tension, style, and a hint of cinematic noir.",
-        content: "En un mundo de contrastes, nuestra fe se mantiene firme. 'Gunmetal Dream' representa la solidez de nuestras creencias en medio de la incertidumbre moderna. Es un recordatorio de que, aunque el entorno sea oscuro, la luz de la verdad siempre encuentra su camino para brillar con intensidad y propósito.",
+        subtitle: "Un cuerpo unido por fe, propósito y servicio.",
+        content: "La Iglesia Adventista de Anaheim Spanish está organizada bajo principios bíblicos de liderazgo compartido y servicio mutuo. Nuestro pastor lidera espiritualmente a la congregación, apoyado por un concilio de ancianos que supervisa la dirección de la iglesia. Cada departamento y ministerio trabaja en armonía para cumplir la misión de Cristo en nuestra comunidad.",
         details: {
-            "Concept": "Resilience",
-            "Cycle": "2025",
-            "Form": "Visual Narrative",
-            "Medium": "Faith & Culture"
+            "Liderazgo": "Pastor & Concilio de Ancianos",
+            "Ministerios": "11 Departamentos Activos",
+            "Misión": "Discipulado & Evangelismo",
+            "Comunidad": "Anaheim, California"
         }
     },
     "adra": {

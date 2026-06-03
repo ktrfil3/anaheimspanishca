@@ -1,0 +1,456 @@
+/* Actividades Section Styling */
+.actividades-section {
+    background-color: var(--base-400);
+    color: var(--base-100);
+    padding: 8rem 0;
+    width: 100%;
+}
+
+.actividades-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 5rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.actividades-header p.sm {
+    color: var(--accent-2);
+}
+
+.actividades-header h2 {
+    font-size: 5rem;
+    color: var(--base-100);
+    margin: 0;
+}
+
+.actividades-intro {
+    font-size: 1.35rem;
+    line-height: 1.6;
+    color: var(--base-200);
+    opacity: 0.9;
+}
+
+/* Category Filter Navigation */
+.categories-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 5rem;
+}
+
+.category-btn {
+    background: transparent;
+    border: 1px solid rgba(227, 227, 219, 0.2);
+    color: var(--base-200);
+    padding: 0.8rem 2rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-family: "Geist Mono", monospace;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.category-btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: var(--accent-2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    transition: width 0.4s ease, height 0.4s ease;
+}
+
+.category-btn span {
+    position: relative;
+    z-index: 1;
+}
+
+.category-btn:hover {
+    border-color: var(--accent-2);
+    color: var(--base-100);
+}
+
+.category-btn.active {
+    border-color: var(--accent-2);
+    color: var(--base-100);
+}
+
+.category-btn.active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Grid Layout */
+.actividades-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    width: 100%;
+}
+
+/* Activity Card */
+.activity-card {
+    background-color: #231e1c;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1.25rem;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                border-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.activity-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-2);
+    box-shadow: 0 12px 30px rgba(89, 86, 248, 0.15);
+}
+
+.activity-card__img-wrapper {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.activity-card__img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.activity-card:hover .activity-card__img-wrapper img {
+    transform: scale(1.08);
+}
+
+.activity-card__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(35, 30, 28, 0) 60%, rgba(35, 30, 28, 0.85) 100%);
+    z-index: 1;
+}
+
+.activity-card__category-pill {
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    background-color: var(--accent-3);
+    color: var(--base-100);
+    padding: 0.4rem 1rem;
+    border-radius: 1rem;
+    font-family: "Geist Mono", monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    z-index: 2;
+}
+
+.activity-card__content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 1rem;
+}
+
+.activity-card__schedule {
+    font-family: "Geist Mono", monospace;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    letter-spacing: 0.05rem;
+}
+
+.activity-card__title {
+    font-size: 2.25rem;
+    color: var(--base-100);
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.activity-card:hover .activity-card__title {
+    color: var(--accent-2);
+}
+
+.activity-card__description {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: var(--base-200);
+    opacity: 0.8;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0;
+}
+
+.activity-card__footer {
+    margin-top: auto;
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.activity-card__more-btn {
+    font-family: "Geist Mono", monospace;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--base-200);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    letter-spacing: 0.05rem;
+    transition: color 0.3s ease;
+}
+
+.activity-card__more-btn svg {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.3s ease;
+}
+
+.activity-card:hover .activity-card__more-btn {
+    color: var(--accent-2);
+}
+
+.activity-card:hover .activity-card__more-btn svg {
+    transform: translateX(4px);
+}
+
+/* Modal Styling */
+.activity-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(12px);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    animation: fadeIn 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.activity-modal-card {
+    background-color: #231e1c;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.5rem;
+    width: 100%;
+    max-width: 950px;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+@keyframes slideUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.activity-modal__close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: rgba(35, 30, 28, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--base-100);
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.activity-modal__close-btn:hover {
+    background-color: var(--accent-2);
+    border-color: var(--accent-2);
+    transform: rotate(90deg);
+}
+
+.activity-modal__close-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.activity-modal__image-side {
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    position: relative;
+}
+
+.activity-modal__image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.activity-modal__info-side {
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.activity-modal__category {
+    font-family: "Geist Mono", monospace;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    letter-spacing: 0.1rem;
+}
+
+.activity-modal__title {
+    font-size: 4rem;
+    color: var(--base-100);
+    margin: 0;
+    line-height: 0.95;
+}
+
+.activity-modal__schedule-box {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: "Geist Mono", monospace;
+    font-size: 0.9rem;
+    color: var(--base-200);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 1.5rem;
+}
+
+.activity-modal__schedule-box svg {
+    width: 18px;
+    height: 18px;
+    color: var(--accent-2);
+}
+
+.activity-modal__description {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--base-200);
+    opacity: 0.9;
+    margin: 0;
+}
+
+.activity-modal__invite {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.activity-modal__invite h3 {
+    font-size: 1.25rem;
+    color: var(--base-100);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -0.02rem;
+}
+
+.activity-modal__invite p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--base-300);
+    margin: 0;
+}
+
+/* Responsiveness */
+@media (max-width: 1200px) {
+    .actividades-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    .actividades-section {
+        padding: 5rem 0;
+    }
+
+    .actividades-header h2 {
+        font-size: 3.5rem;
+    }
+
+    .actividades-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .activity-modal-card {
+        grid-template-columns: 1fr;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .activity-modal__image-side {
+        min-height: 250px;
+        height: 250px;
+    }
+
+    .activity-modal__info-side {
+        padding: 2rem;
+    }
+
+    .activity-modal__title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .actividades-header h2 {
+        font-size: 2.75rem;
+    }
+
+    .category-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.75rem;
+    }
+
+    .activity-modal__info-side {
+        padding: 1.5rem;
+        gap: 1.2rem;
+    }
+
+    .activity-modal__title {
+        font-size: 2rem;
+    }
+}

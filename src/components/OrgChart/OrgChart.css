@@ -1,0 +1,245 @@
+/* =============================================
+   OrgChart Section
+   ============================================= */
+
+.org-chart-section {
+  background: var(--base-400);
+  padding: 8rem 0 10rem;
+}
+
+/* --- Description --- */
+.org-chart-desc {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 7rem;
+}
+
+.org-chart-desc p.sm {
+  display: block;
+  margin-bottom: 1.5rem;
+  color: var(--accent-2);
+  letter-spacing: 0.18rem;
+}
+
+.org-chart-desc__heading {
+  color: var(--base-100);
+  margin-bottom: 2rem;
+  font-size: 5rem;
+}
+
+.org-chart-desc__body {
+  color: var(--base-200);
+  line-height: 1.6;
+  font-size: 1.25rem;
+}
+
+/* --- Wrapper --- */
+.org-chart-wrapper {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  padding-bottom: 2rem;
+}
+
+/* =============================================
+   Node Container
+   ============================================= */
+.org-node-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =============================================
+   Node Card
+   ============================================= */
+.org-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: default;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.org-node--expandable {
+  cursor: pointer;
+}
+
+.org-node--expandable:hover {
+  transform: translateY(-6px);
+}
+
+/* --- Avatar --- */
+.org-node__avatar {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--base-300);
+  background: var(--base-500);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+}
+
+.org-node--expandable:hover .org-node__avatar {
+  border-color: var(--accent-2);
+  box-shadow: 0 0 0 4px rgba(89, 86, 248, 0.25);
+}
+
+.org-node__avatar--root {
+  width: 130px;
+  height: 130px;
+  border-width: 4px;
+  border-color: var(--accent-2);
+  box-shadow: 0 0 0 6px rgba(89, 86, 248, 0.2), 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.org-node__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* --- Toggle badge --- */
+.org-node__toggle {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 22px;
+  height: 22px;
+  background: var(--accent-2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s;
+}
+
+.org-node__toggle--open {
+  transform: rotate(180deg);
+  background: var(--accent-1);
+}
+
+.org-node__toggle svg {
+  width: 12px;
+  height: 12px;
+  color: var(--base-100);
+}
+
+/* --- Label info --- */
+.org-node__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.org-node__name {
+  font-family: "PP Pangram Sans";
+  font-weight: 900;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--base-100);
+  letter-spacing: 0.04rem;
+  text-align: center;
+  max-width: 120px;
+  line-height: 1.1;
+}
+
+.org-node__title {
+  font-family: "Geist Mono";
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+  color: var(--accent-2);
+  text-align: center;
+  max-width: 130px;
+  line-height: 1.2;
+}
+
+/* =============================================
+   Children / Tree Lines
+   ============================================= */
+.org-children {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0;
+}
+
+/* Vertical line going down from parent */
+.org-children__line-v {
+  width: 2px;
+  height: 36px;
+  background: linear-gradient(to bottom, var(--accent-2), var(--base-300));
+  opacity: 0.5;
+}
+
+/* Horizontal row of children */
+.org-children__row {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+}
+
+/* Each child branch */
+.org-children__branch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1.5rem;
+  position: relative;
+}
+
+/* Horizontal connector line above each child */
+.org-children__line-h {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, var(--base-300), var(--accent-2), var(--base-300));
+  opacity: 0.4;
+  margin-bottom: 20px;
+}
+
+/* =============================================
+   Responsive
+   ============================================= */
+@media (max-width: 1000px) {
+  .org-chart-section {
+    padding: 5rem 0 6rem;
+  }
+
+  .org-chart-desc__heading {
+    font-size: 3rem;
+  }
+
+  .org-chart-desc {
+    margin-bottom: 4rem;
+  }
+
+  .org-node__avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .org-node__avatar--root {
+    width: 95px;
+    height: 95px;
+  }
+
+  .org-children__branch {
+    padding: 0 0.75rem;
+  }
+
+  .org-node__name {
+    font-size: 0.7rem;
+    max-width: 90px;
+  }
+
+  .org-node__title {
+    font-size: 0.6rem;
+    max-width: 90px;
+  }
+}

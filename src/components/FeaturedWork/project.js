@@ -15,7 +15,7 @@ export const projects = [
   },
   {
     name: "Estructura",
-    description: "Tension, style, and a hint of cinematic noir.",
+    description: "",
     img: "/featured-work/work-3.jpg",
     route: "/identidad/estructura",
     slug: "estructura"

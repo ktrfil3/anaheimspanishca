@@ -3,9 +3,13 @@ import React from "react";
 import { useParams } from "next/navigation";
 import { articles } from "@/data/identityArticles";
 import { projects } from "@/components/FeaturedWork/project";
+import { orgChart } from "@/data/orgChart";
+import { actividadesData } from "@/data/actividades";
 import "./../identidad.css";
 import Footer from "@/components/Footer/Footer";
 import Copy from "@/components/Copy/Copy";
+import OrgChart from "@/components/OrgChart/OrgChart";
+import Actividades from "@/components/Actividades/Actividades";
 
 const Page = () => {
     const params = useParams();
@@ -42,23 +46,33 @@ const Page = () => {
                 </div>
             </section>
 
-            <section className="project-details">
-                <Copy animateOnScroll={true}>
-                    <div className="details">
-                        <p>Artículo</p>
-                        <h3 className="main-content">
-                            {article.content}
-                        </h3>
-                    </div>
-
-                    {article.details && Object.entries(article.details).map(([key, value]) => (
-                        <div className="details" key={key}>
-                            <p>{key}</p>
-                            <h3>{value}</h3>
+            {slug !== "estructura" && slug !== "actividades" && (
+                <section className="project-details">
+                    <Copy animateOnScroll={true}>
+                        <div className="details">
+                            <p>Artículo</p>
+                            <h3 className="main-content">
+                                {article.content}
+                            </h3>
                         </div>
-                    ))}
-                </Copy>
-            </section>
+
+                        {article.details && Object.entries(article.details).map(([key, value]) => (
+                            <div className="details" key={key}>
+                                <p>{key}</p>
+                                <h3>{value}</h3>
+                            </div>
+                        ))}
+                    </Copy>
+                </section>
+            )}
+
+            {slug === "estructura" && (
+                <OrgChart data={orgChart} />
+            )}
+
+            {slug === "actividades" && (
+                <Actividades data={actividadesData} />
+            )}
 
             <Footer />
         </div>
@@ -66,3 +80,4 @@ const Page = () => {
 };
 
 export default Page;
+
