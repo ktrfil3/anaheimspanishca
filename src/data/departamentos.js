@@ -47,7 +47,7 @@ export const departamentos = [
     name: "Conquistadores",
     leaderName: "Kelly Velazquez",
     leaderPhoto: "/departamet/conquista.jpg",
-    coverPhoto: "https://conectate.um.edu.mx/archivos/2025/10/img-DusI17zvMW3gLhNU.jpg",
+    coverPhoto: "/departamet/conquistador.jpg",
     description: "El club de Conquistadores es una organización mundial de la Iglesia Adventista del Séptimo Día, para niños y adolescentes de 10 a 15 años. El club de Conquistadores ofrece una amplia variedad de actividades que permiten a los jóvenes desarrollar sus talentos y habilidades, así como también aprender sobre la naturaleza, la historia, la cultura y la religión. Además, los conquistadores tienen la oportunidad de participar en proyectos de servicio comunitario, que les permiten contribuir al bienestar de su comunidad.",
     materials: [
       { id: 6, title: "Presentación General", type: "presentation", link: "#" },
