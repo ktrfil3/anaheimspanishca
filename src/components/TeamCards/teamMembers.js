@@ -1,41 +1,41 @@
 export const teamMembers = [
   {
     id: "card-1",
-    name: "Lina Duarte",
+    name: "Elsy Barraona",
     img: "/team-cards/team-member-1.jpg",
-    alt: "Lina Duarte",
+    alt: "Elsy Barraona",
     description:
       "Dorcas",
   },
   {
     id: "card-2",
-    name: "Kenji Mori",
+    name: "Raymundo Velázquez",
     img: "/team-cards/team-member-2.jpg",
-    alt: "Kenji Mori",
+    alt: "Raymundo Velázquez",
     description:
       "Ansiano",
   },
   {
     id: "card-3",
-    name: "Amara Singh",
+    name: "María Román",
     img: "/team-cards/team-member-3.jpg",
-    alt: "Amara Singh",
+    alt: "María Román",
     description:
       "Tesoreria",
   },
   {
     id: "card-4",
-    name: "Felix Turner",
+    name: "Cynthia Uriarte",
     img: "/team-cards/team-member-4.jpg",
-    alt: "Felix Turner",
+    alt: "Cynthia Uriarte",
     description:
-      "EBV",
+      "VBS",
   },
   {
     id: "card-5",
-    name: "Isolde Rey",
+    name: "Ariel Torres",
     img: "/team-cards/team-member-5.jpg",
-    alt: "Isolde Rey",
+    alt: "Ariel Torres",
     description:
       "Pastor",
   },
